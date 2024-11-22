@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Crypto Club Accounting">
+        <meta name="author" content="David Brady">
+        <meta name="generator" content="Bootstrap 5.3.3">
+        <meta name="format-detection" content="telephone=no">
+        <title>Crypto Club Accounting [CCA]</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            body {background-color:#ffffff;}
+            p {font-size:18px; margin-bottom:18px; line-height:1.6;}
+            h1 {font-size:52px; margin:0px; padding:0px 0px 30px 0px; font-weight:800;}
+            h3 {font-size:30px; line-height:1.7;}
+            ol {font-size:20px; line-height:2.0;}
+            li {line-height:2.0;}
+            section {padding:6rem 0;}
+            footer.footer {padding-bottom:20px;}
+            ul.list-group {margin:40px 0px 50px 0px;font-size:20px;}
+            ul.list-group li {padding:20px 20px 40px 30px;}
+            ul.none {list-style-type:none;}
+            .bg-black {background-color:#000000;}
+            .bg-silver {background-color:#c0c0c0;}
+            .bg-white {background-color:#ffffff;}
+            .fc-white {color:#ffffff;}
+            .fw-bold {font-weight:700 !important;}
+            .fst-italic {font-style:italic !important;}
+            .fs20{font-size:20px;} .fs22{font-size:22px;} .fs24{font-size:24px;} .fs40{font-size:40px;}
+            header.masthead h2 {padding-bottom:2rem; font-weight:400; line-height:1.7;}
+            header.masthead {margin:0; text-align:center; color: #000000; font-weight:400;}
+            @media (min-width: 768px) {header.masthead {padding-top:4rem; padding-bottom:4rem;}}
+            
+            .timeline {
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+.timeline:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 2px;
+  margin-left: -1.5px;
+  content: "";
+  background-color: #e9ecef;
+}
+.timeline > li {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 50px;
+}
+.timeline > li:after, .timeline > li:before {
+  display: table;
+  content: " ";
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li .timeline-panel {
+  position: relative;
+  float: right;
+  width: 100%;
+  padding: 0 20px 0 100px;
+  text-align: left;
+}
+.timeline > li .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+.timeline > li .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+.timeline > li .timeline-image {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  margin-left: 0;
+  text-align: center;
+  color: white;
+  border: 7px solid #e9ecef;
+  border-radius: 100%;
+  background-color: #ffc800;
+}
+.timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
+  font-size: 10px;
+  line-height: 14px;
+  margin-top: 12px;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+  padding: 0 20px 0 100px;
+  text-align: left;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+.timeline > li:last-child {
+  margin-bottom: 0;
+}
+.timeline .timeline-heading h4, .timeline .timeline-heading .h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline .timeline-heading h4.subheading, .timeline .timeline-heading .subheading.h4 {
+  text-transform: none;
+}
+.timeline .timeline-body > ul,
+.timeline .timeline-body > p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline:before {
+    left: 50%;
+  }
+  .timeline > li {
+    min-height: 100px;
+    margin-bottom: 100px;
+  }
+  .timeline > li .timeline-panel {
+    float: left;
+    width: 41%;
+    padding: 0 20px 20px 30px;
+    text-align: right;
+  }
+  .timeline > li .timeline-image {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+  }
+  .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 16px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+    padding: 0 30px 20px 20px;
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  .timeline > li {
+    min-height: 150px;
+  }
+  .timeline > li .timeline-panel {
+    padding: 0 20px 20px;
+  }
+  .timeline > li .timeline-image {
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+  }
+  .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 30px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 0 20px 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .timeline > li {
+    min-height: 170px;
+  }
+  .timeline > li .timeline-panel {
+    padding: 0 20px 20px 100px;
+  }
+  .timeline > li .timeline-image {
+    width: 170px;
+    height: 170px;
+    margin-left: -85px;
+  }
+  .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
+    margin-top: 40px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 0 100px 20px 20px;
+  }
+}
+        </style>
+    </head>
+    <body>
+        <nav id="mainnavbar" class="navbar navbar-expand-md navbar-dark bg-dark"">
+            <div class="container-fluid">
+                <span class="fw-bold fc-white fs20">Crypto Club Accounting [CCA]</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-responsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbar-responsive" class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link href="#about">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#solutions">SOLUTIONS</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#portfolio">PORTFOLIO</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#pricing">PRICING</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead">
+            <div class="container">
+                <h1>Crypto Club Accounting [CCA]</h1>
+                <h2>Bookkeeping | Accounting | Payroll | Tax | CFO</h2>
+                <div class="fst-italic fs40">David Rushe Brady<br>rushe@rushebrady.com<br>720-593-0103</div>
+                <p>&nbsp;</p>
+                <p>Imagine that&mdash;a bookkeeper who answers the phone, replies to your emails &amp; texts, and who works to ensure your profitability.</p>
+                <p>&nbsp;</p>
+                <p>Hi, I'm Brady. We don't just manage your books. We provide financial insights that <span class="fw-bold">lower expenses</span> and <span class="fw-bold">increase profits</span> so you have money left in your bank account. We call it <span class="fst-italic">&ldquo;bookkeeping that makes you money.&rdquo;</span></p>
+                <p>&nbsp;</p>
+                <p>We handle all your accounting needs with a focus on growing your profits. More than just bookkeepers &mdash; we implement <span class="fw-bold fst-italic">&laquo;Profit First For Contractors&raquo;</span>.</p>
+            </div>
+        </header>
+        <!--ABOUT-->
+        <section id="about" class="bg-silver">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="section-heading">ABOUT</h1>
+                    <h4>More&nbsp;Profit &nbsp;|&nbsp; Less&nbsp;Effort</h4>
+                </div>
+                <p>&nbsp;</p>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="brady1.jpg" alt="about photo 1" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading"><h3>Do you have cashflow shortfalls every month?</h3></div>
+                            <div class="timeline-body"><p>Contractors have specific bookkeeping needs. I'm familiar with these needs and can take over your bookkeeping.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="brady2b.jpg" alt="about photo2" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading"><h3>Are your expenses increasing but no increase in revenue?</h3></div>
+                            <div class="timeline-body"><p>This question is a &ldquo;death spiral&rdquo; for business. Another set of eyes analyzing your financials solves the problem.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="brady3.jpg" alt="about photo 3" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading"><h3>Do you pay bills late?</h3></div>
+                            <div class="timeline-body"><p>That's because you're working on projects instead of your books...and that's the way it should be. Somebody else needs to focus on your books&mdash;and your profits.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="brady4.jpg" alt="about photo 4" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading"><h3>Do projects cost more than you budgeted?</h3></div>
+                            <div class="timeline-body"><p>That's because you're doing two jobs&mdash;work projects plus bookkeeping. Do one, not both. My service lets you do that.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="brady5b.jpg" alt="about photo 5" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading"><h3>Are your books way behind or disorganized?</h3></div>
+                            <div class="timeline-body"><p>No worries, over the years I have seen some messy situations. I'll get your books back in order ... and profitable.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4 style="font-weight:900;">For<br>Colorado<br>Contractors</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--end ABOUT-->
+        <!--SOLUTIONS-->
+        <section id="solutions">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="section-heading">SOLUTIONS</h1>
+                    <h4>Bookkeeping &nbsp;|&nbsp; Accounting &nbsp;|&nbsp; Payroll &nbsp;|&nbsp; Tax &nbsp;|&nbsp; Profit</h4>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <i class="bi bi-file-bar-graph" style="font-size:6rem;"></i>
+                        <h4 class="my-3">&nbsp;Analysis &amp; Reporting</h4>
+                        <ul class="none">
+                            <li>Financial statement preparation</li>
+                            <li>Analyze financial reports for profit ideas</li>
+                            <li>Create monthly reports with explanations</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-credit-card-2-front" style="font-size:6rem;"></i>
+                        <h4 class="my-3">&nbsp;&nbsp;Expense Management</h4>
+                        <ul class="none">
+                            <li>Manage Accounts Payable</li>
+                            <li>Analyze AP for profit ideas</li>
+                            <li>Pay bills on time</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-cash-coin" style="font-size:6rem;"></i>
+                        <h4 class="my-3">&nbsp;Income Management</h4>
+                        <ul class="none">
+                            <li>Manage Accounts Receivable</li>
+                            <li>Analyze AR for profit ideas</li>
+                            <li>Get paid on time</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <i class="bi bi-list-check" style="font-size:6rem;"></i>
+                        <h4 class="my-3">&nbsp;Job Budgeting</h4>
+                        <ul class="none">
+                            <li>Manage invoices and estimates</li>
+                            <li>Track projects and budgets</li>
+                            <li>Monitor and reduce costs</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-coin" style="font-size:6rem;"></i>
+                        <h4 class="my-3">&nbsp;Payroll</h4>
+                        <ul class="none">
+                            <li>Employee payroll &amp; 1099 subcontractor</li>
+                            <li>Using QuickBooks and Gusto payroll</li>
+                            <li>File year-end W2, W3, 1099 forms</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-bank" style="font-size:6rem;"></i>
+                        <h4 class="my-3">&nbsp;Taxes</h4>
+                        <ul class="none">
+                            <li>Prepare end-of-year tax documents</li>
+                            <li>Tax strategy recommendations</li>
+                            <li>Tax planning, preparation, filing</li>
+                        </ul>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end SOLUTIONS-->
+        <!--PRICING-->
+        <section id="pricing" class="bg-silver">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="section-heading">PRICING</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 col-sm-11 col-12 mx-auto">
+                        <p>I have one goal&mdash;to help keep your company profitable every month.</p>
+                        <p>How?<br>By transforming bookkeeping &amp; accounting from a &ldquo;necessary evil&rdquo; to a tool for building a profitable business using <span class="fst-italic fw-bold">&laquo;Profit First For Contractors&raquo;</span>.</p>
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="fs24 fw-bold">COPPER Package&nbsp; [$1000/mth]</span><br><span class="fst-italic fw-bold">Expense Management</span><br>
+                                &nbsp;&loz;&nbsp;Manage Accounts Payable (bill pay)<br>
+                                <!-- &nbsp;&loz;&nbsp;Pay 1099 subcontractors<br> -->
+                                &nbsp;&loz;&nbsp;Reconcile &amp; categorize all bank &amp; credit card transactions<br>
+                                &nbsp;&loz;&nbsp;Implement <span class="fst-italic">&laquo;Profit First For Contractors&raquo;</span><br>
+                                &nbsp;&loz;&nbsp;Tax planning, preparation, filing of business tax return<br>
+                                <span class="fst-italic">&nbsp;&nbsp;(subtract $100/mth if someone else does your taxes)</span><br>
+                            </li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="fs24 fw-bold">SILVER Package&nbsp; [$1950/mth]</span><br><span class="fst-italic fw-bold">Income Management</span> ... plus everything above<br>
+                                &nbsp;&loz;&nbsp;Manage Accounts Receivable (customer invoicing)<br>
+                                &nbsp;&loz;&nbsp;Communicate with customers regarding invoice payments<br>
+                                &nbsp;&loz;&nbsp;Track and manage your cash inflows and outflows<br>
+                                &nbsp;&loz;&nbsp;Analyze financials for insights and profit recommendations<br>
+                                &nbsp;&loz;&nbsp;Implement <span class="fst-italic">&laquo;Profit First For Contractors&raquo;</span><br>
+                                &nbsp;&loz;&nbsp;Tax planning, preparation, filing of business tax return<br>
+                                <span class="fst-italic">&nbsp;&nbsp;(subtract $100/mth if someone else does your taxes)</span><br>
+                            </li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="fs24 fw-bold">GOLD Package&nbsp; [$2950/mth]</span><br><span class="fst-italic fw-bold">Payroll, Budgeting, Estimating</span> ... plus everything above<br>
+                                &nbsp;&loz;&nbsp;Process employee payroll &amp; 1099 subcontractor pay<br>
+                                &nbsp;&loz;&nbsp;Track projects, budgets, estimates, invoices<br>
+                                &nbsp;&loz;&nbsp;File end-of-year W2, W3 and 1099 forms<br>
+                                &nbsp;&loz;&nbsp;Implement <span class="fst-italic">&laquo;Profit First For Contractors&raquo;</span><br>
+                                &nbsp;&loz;&nbsp;Tax planning, preparation, filing of business tax return<br>
+                                <span class="fst-italic">&nbsp;&nbsp;(subtract $100/mth if someone else does your taxes)</span><br>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end PRICING-->
+        <!--PORTFOLIO
+        <section id="portfolio" class="page-section bg-light">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Threads</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Finish</div>
+                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Lines</div>
+                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Southwest</div>
+                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Window</div>
+                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <ul class="none">
+        end PORTFOLIO-->
+            
+        <!--TEAM-->
+        <!--
+        <section id="team" class="bg-light">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="section-heading text-uppercase">Pricing</h1>
+                    <h3 class="section-subheading text-muted">[&nbsp;$900&nbsp;&mdash;&nbsp;$3900&nbsp;]</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="team1.jpg" alt="..." />
+                            <h4>Parveen Anand</h4>
+                            <p class="text-muted">Lead Designer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="team2.jpg" alt="..." />
+                            <h4>Diana Petersen</h4>
+                            <p class="text-muted">Lead Marketer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="team3.jpg" alt="..." />
+                            <h4>Larry Parker</h4>
+                            <p class="text-muted">Lead Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                </div>
+            </div>
+        </section>
+        -->
+        <!--end TEAM-->
+        <!--INDUSTRY ICONS-->
+        <section id="industryicons">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 col-sm-6 my-3 px-5">
+                        <img class="img-fluid d-block mx-auto" src="xero-certified-400.png" />
+                    </div>
+                    <div class="col-md-4 col-sm-6 my-3 px-5">
+                        <img class="img-fluid d-block mx-auto" src="qb-advisor-400.png" />
+                    </div>
+                    <div class="col-md-4 col-sm-6 my-3 px-5">
+                        <img class="img-fluid d-block mx-auto" src="gusto1.png" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End INDUSTRY ICONS-->
+        <!--FOOTER-->
+        <footer id="contact" class="footer py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">David Rushe Brady<br>Crypto Club Accounting [CCA]</div>
+                    <div class="col-lg-4 my-3 my-lg-0 text-lg-center">
+                        <address>1550 Larimer St Unit 442<br>Denver, Colorado 80202, USA</address>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">rushe@rushebrady.com<br>720-593-0103
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
